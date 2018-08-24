@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">VPK</string>
+    <string name="refresh">Refresh</string>
+    <string name="no_net">No internet connection</string>
 </resources>
