@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="refresh">"ताज़ा करना "</string>
+    <string name="no_net">"कोई इंटरनेट कनेक्शन नहीं "</string>
+</resources>
