@@ -13,6 +13,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.IOException
 import java.io.InputStream
@@ -23,6 +24,8 @@ class MainActivity : AppCompatActivity() {
     companion object {
         private val TAG: String = MainActivity::class.java.simpleName
     }
+
+    private var ad: InterstitialAd? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +49,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
         adView.loadAd(AdRequest.Builder().build())
+        ad = InterstitialAd(this)
+        ad?.adUnitId = getString(R.string.inter_id)
+        ad?.loadAd(AdRequest.Builder().build())
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        ad?.show()
     }
 
     fun refresh(v: View) {
